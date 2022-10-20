@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <h1 class="text-center mt-5 mb-4">Todo app</h1>
+
+    <div class="row justify-content-between">
+        <div class="col-md-5">
+            <h3 class="mb-4">Add a new todo</h3>
+            <form (submit)="createTodo()" class="input-group mb-5">
+                <input [(ngModel)]="createDescription" type="text" name="title" #ctrl="ngModel" placeholder="Add a new todo" aria-label="Add a new todo" class="form-control" />
+                <input type="submit" value="Add" class="input-group-text" />
+            </form>
+
+            <h3 class="mb-4">Edit a todo</h3>
+            <form (submit)="editTodo()">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="mb-2">id:</div>
+                        <input [(ngModel)]="editId" type="text" name="id" #ctrl="ngModel" class="form-control mb-3 hide-border" />
+                    </div>
+                    <div class="col-10">
+                        <div class="mb-2">Edit description:</div>
+                        <textarea [(ngModel)]="editDescription" type="text" name="description" #ctrl="ngModel" class="form-control mb-2"></textarea>
+                        <input type="submit" value="Edit" class="input-group-text btn btn-secondary edit-button" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-5">
+            <h3 class="text-center mb-3">Todo list</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">description</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let todo of todos">
+                        <th scope="row">{{ todo.id }}</th>
+                        <td>{{ todo.description }}</td>
+                        <td>
+                            <button (click)="editSelect(todo)" type="button" class="btn btn-secondary edit-button-list px-3">Edit</button>
+                        </td>
+                        <td>
+                            <button (click)="deleteTodo(todo)" type="button" class="btn btn-danger delete-button-list px-3">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

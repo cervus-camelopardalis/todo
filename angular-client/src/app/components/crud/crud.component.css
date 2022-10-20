@@ -1,0 +1,39 @@
+.wrapper {
+    max-width: 886px;
+    margin: auto;
+}
+
+th, td {
+    vertical-align: middle;
+}
+
+.edit-button {
+    color: #212529;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+}
+
+.edit-button-list {
+    color: white;
+    background-color: #6c757d;
+    border: none;
+}
+
+.edit-button-list:hover {
+    background-color: #78828a;
+}
+
+.delete-button-list {
+    color: white;
+    background-color: #bb2d3b;
+    border: none;
+}
+
+.delete-button-list:hover {
+    background-color: #ce3343;
+}
+
+.hide-border {
+    border: none;
+    padding-left: 0;
+}
